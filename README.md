@@ -19,14 +19,11 @@ This template should help get you started developing with Next.js.
 
 ```bash
 npx degit phakedev/next-template my-next-app
-<<<<<<< HEAD
-=======
 ```
 
 `cd` to your folder project.
 
 ```bash
->>>>>>> f70cd64 (feat: added husky and commitlint)
 cd my-app
 ```
 
@@ -46,10 +43,6 @@ pnpm dev
 
 ### Production
 
-<<<<<<< HEAD
-```bash
-pnpm build
-=======
 Build your app.
 
 ```bash
@@ -59,6 +52,5 @@ pnpm build
 Start!
 
 ```bash
->>>>>>> f70cd64 (feat: added husky and commitlint)
 pnpm start
 ```
