@@ -11,7 +11,7 @@ type Plugin = {
 }
 
 const Home: NextPage = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, systemTheme } = useTheme()
   const plugins: Plugin[] = [
     {
       name: 'TailwindCSS',
@@ -22,11 +22,6 @@ const Home: NextPage = () => {
       name: 'next-themes',
       url: 'https://github.com/pacocoursey/next-themes',
       description: 'An abstraction for themes in your Next.js app.',
-    },
-    {
-      name: '@headlessui/react',
-      url: 'https://github.com/tailwindlabs/headlessui',
-      description: 'Completely unstyled, fully accessible UI components for TailwindCSS.',
     },
     {
       name: '@iconify/react',
@@ -47,7 +42,13 @@ const Home: NextPage = () => {
           <p className="text-zinc-500">Next.js starter template!</p>
 
           <div className="mt-4">
-            <a href="https://github.com/phakedev/next-template" target="_blank" rel="noopener noreferrer" title="Github" className="inline-flex items-center gap-2 border-transparent">
+            <a
+              href="https://github.com/phakedev/next-template"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Github"
+              className="inline-flex items-center gap-2 border-transparent"
+            >
               <Icon icon="ant-design:github-filled" className="w-8 h-8" />
               phakedev/next-template
             </a>
@@ -57,9 +58,20 @@ const Home: NextPage = () => {
             <h3 className="text-lg font-medium text-center mb-2">Plugins:</h3>
             <ul>
               {plugins.map(({ name, description, url }) => (
-                <li key={name} className="flex items-center gap-2 text-zinc-500 mb-2">
-                  <Icon icon="akar-icons:circle-check" className="text-emerald-500" />
-                  <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 ">
+                <li
+                  key={name}
+                  className="flex items-center gap-2 text-zinc-500 mb-2"
+                >
+                  <Icon
+                    icon="akar-icons:circle-check"
+                    className="text-emerald-500"
+                  />
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 "
+                  >
                     {name}
                   </a>
                   - {description}
@@ -68,14 +80,25 @@ const Home: NextPage = () => {
             </ul>
           </div>
 
-          <button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} className="mt-4">
-            {theme === 'dark' ? (
+          <button
+            onClick={() =>
+              setTheme(
+                theme === 'dark' ||
+                  (theme === 'system' && systemTheme === 'dark')
+                  ? 'light'
+                  : 'dark'
+              )
+            }
+            className={styles['theme-toggle-icon']}
+          >
+            {theme === 'dark' ||
+            (theme === 'system' && systemTheme === 'dark') ? (
               <>
-                <Icon icon="cil:moon" className={styles['theme-toggle-icon']} />
+                <Icon icon="tabler:moon-filled" />
               </>
             ) : (
               <>
-                <Icon icon="cil:sun" className={styles['theme-toggle-icon']} />
+                <Icon icon="tabler:sun-filled" />
               </>
             )}
           </button>

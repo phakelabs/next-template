@@ -6,7 +6,6 @@ This template should help get you started developing with Next.js.
 
 - [`tailwindcss`](https://tailwindcss.com/) - A utility-first CSS framework for rapid UI development.
 - [`next-themes`](https://github.com/pacocoursey/next-themes) - An abstraction for themes in your Next.js app.
-- [`@headlessui/react`](https://github.com/tailwindlabs/headlessui) - Completely unstyled, fully accessible UI components for TailwindCSS.
 - [`@iconify/react`](https://docs.iconify.design/icon-components/react/) - React component library for icon fonts.
 
 ## Let's start 🚀

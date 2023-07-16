@@ -1,3 +1,7 @@
 .theme-toggle-icon {
+  @apply mt-6;
+}
+
+.theme-toggle-icon svg {
   @apply w-6 h-6;
 }
